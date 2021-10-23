@@ -44,20 +44,20 @@ var DiceView = React.createClass({
         return (
             <Image source={Images.dicetable} resizeMode={'stretch'} style={{
                 flex: 1,
-                alignItems: 'center', justifyContent: 'center',
+                justifyContent: 'flex-start', alignItems: 'flex-start', 
                 width: null,
                 height: null,
                 backgroundColor: 'transparent'
             }}>           
-                <View style={{flex: 5, justifyContent: 'center', alignItems: 'center'}}>
-                    <DiceTray size={Style.Scaling.scale(64)} dice={this.dice} values={this.dice.map((d,i) => this.props.dice[i].value)} onDie={this.onDieChanged}/>
+                <View style={{flex: 4, justifyContent: 'center', alignItems: 'center'}}>
+                    <DiceTray dice={this.dice} values={this.dice.map((d,i) => this.props.dice[i].value)} onDie={this.onDieChanged}/>
                 </View>
-                <View style={{flex:2, flexDirection:'row', alignItems: 'center', marginBottom: 20}}>
-                    <View style={{flex:1}} />
-                    <View style={{flex:1}}>
+                <View style={{flex:1, flexDirection:'row'}}>
+                    <View style={{flex:2}} />
+                    <View style={{flex:1, paddingTop:Style.Padding.pad(3), paddingBottom:Style.Padding.pad(3)}}>
                         <RollButton direction={'vertical'} onRoll={this.onDiceRoll} />
                     </View>
-                    <View style={{flex:1}} />
+                    <View style={{flex:2}} />
                 </View>
             </Image>
         );

@@ -51,26 +51,28 @@ var Base6View = React.createClass({
         }
     },
     render() {
+        let padvertical = 2;
+        let padhorizontal = 3;
         return (
             <View style={{flex:1, backgroundColor: 'gainsboro',paddingLeft:3, paddingRight:3,alignItems:'center',justifyContent:'center'}}>
                 {range(this.props.number).map((v,i) => 
                     <View key={i} style={{flex: 1, flexDirection:'row'}}>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'-6'} onPress={this.onChange(i,-6)}/>
                         </View>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'-3'} onPress={this.onChange(i,-3)}/>
                         </View>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'-1'} onPress={this.onChange(i,-1)}/>
                         </View>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'+1'} onPress={this.onChange(i,1)}/>
                         </View>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'+3'} onPress={this.onChange(i,3)}/>
                         </View>
-                        <View style={{flex:1, paddingTop: Style.Padding.pad(10), paddingBottom: Style.Padding.pad(10), paddingLeft: Style.Padding.pad(5), paddingRight: Style.Padding.pad(5)}}>
+                        <View style={{flex:1, paddingTop: Style.Padding.pad(padvertical), paddingBottom: Style.Padding.pad(padvertical), paddingLeft: Style.Padding.pad(padhorizontal), paddingRight: Style.Padding.pad(padhorizontal)}}>
                         <Button buttonBackgroundColor={this.buttonColor(i)} labelTextColor={'white'} label={'+6'} onPress={this.onChange(i,6)}/>
                         </View>                
                     </View>                    

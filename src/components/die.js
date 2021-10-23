@@ -12,7 +12,7 @@ var Die = React.createClass({
                 <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                     <Die6Support die={this.props.die} value={this.props.value} 
                         size={this.props.size} dieColor={this.props.diecolor} dotColor={this.props.dotcolor} 
-                        onPress={this.props.onDie} />
+                        onPress={this.props.onPress} />
                 </View>
             );    
         }
@@ -21,7 +21,7 @@ var Die = React.createClass({
                 <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                     <DieSpace die={this.props.die} value={this.props.value} 
                         size={this.props.size} dieColor={this.props.diecolor} dotColor={this.props.dotcolor} 
-                        onPress={this.props.onDie} />
+                        onPress={this.props.onPress} />
                 </View>
             );    
         }
@@ -34,7 +34,7 @@ var Die = React.createClass({
                 <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                     <Die10 die={this.props.die} value={this.props.value} 
                         size={this.props.size} dieColor={this.props.diecolor} dotColor={this.props.dotcolor} 
-                        onPress={this.props.onDie} />
+                        onPress={this.props.onPress} />
                 </View>
             );
         case 6:
@@ -42,7 +42,7 @@ var Die = React.createClass({
                 <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                     <Die6 die={this.props.die} value={this.props.value} 
                         size={this.props.size} dieColor={this.props.diecolor} dotColor={this.props.dotcolor} 
-                        onPress={this.props.onDie} />
+                        onPress={this.props.onPress} />
                 </View>
             );
         default:

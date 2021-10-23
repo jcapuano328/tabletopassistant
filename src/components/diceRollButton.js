@@ -41,10 +41,11 @@ var RollButton = React.createClass({
                 borderRadius: 10,
                 borderColor: 'black',
                 borderWidth: 1,
-                paddingTop: Style.Padding.pad(15),
-                paddingLeft: Style.Padding.pad(paddingLeft),
-                paddingRight: Style.Padding.pad(paddingRight),
-                paddingBottom: Style.Padding.pad(15)
+                flex: 1,
+                //paddingTop: Style.Padding.pad(15),
+                //paddingLeft: Style.Padding.pad(paddingLeft),
+                //paddingRight: Style.Padding.pad(paddingRight),
+                //paddingBottom: Style.Padding.pad(15)
             }} onLayout={this.onLayout}>
                 {/*<Text style={{fontSize: Style.Font.medium(),color: this.props.buttonColor || '#FFF', alignSelf: 'center', textAlign: 'center'}}>Roll</Text>*/}
                 <Image
