@@ -32,6 +32,7 @@ module.exports = {
 	"calc-8": require('./calc-8.png'),
 	"calc-9": require('./calc-9.png'),
 	
+	"calc-alt": require('./calc-alt.png'),
 	"calc-size": require('./calc-size.png'),
 	"calc-loss": require('./calc-loss.png'),
 	"calc-strength": require('./calc-strength.png'),

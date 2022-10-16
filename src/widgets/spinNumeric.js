@@ -91,6 +91,7 @@ var SpinNumeric = React.createClass({
                                 //backgroundColor: '#F8F8F9',
                                 justifyContent: 'center',
                                 textAlign: 'center'}}
+                        //keyboardType={'decimal-pad'}
                         keyboardType={'numeric'}
                         autoCorrect={false}
                         onChangeText={this.onChanged}

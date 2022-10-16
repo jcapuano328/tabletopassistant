@@ -116,7 +116,7 @@ var CalculatorProportionalView = React.createClass({
     },
     render() {
         let width = this.state.width / 4.2;
-        let height = this.state.height;
+        let height = this.state.height;        
         return (
             <View style={{flex: 1, marginTop: Style.Scaling.scale(44)}}>
                 <View style={{flex:1, flexDirection:'row'}} onLayout={this.onLayout}>

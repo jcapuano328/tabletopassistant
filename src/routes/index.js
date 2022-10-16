@@ -1,11 +1,12 @@
 import React from 'react';
+import { View } from 'react-native';
 import { Actions, Scene } from 'react-native-router-flux';
 import NavBar from '../components/navBar';
-import {MainView,CalculatorView,ConfigurationView,AboutView} from '../views';
+import {MainView,CalculatorView,CalculatorStandardView,CalculatorProportionalView,ConfigurationView,AboutView} from '../views';
 import Icons from '../res';
 
 const rightButtons = [
-    {image:'calc', onPress: () => Actions.calc()},
+    //{image:'calc', onPress: () => Actions.calcstd()},
     {image:'config', onPress: () => Actions.config()},
     {image:'info', onPress: () => Actions.about() }    
 ];
@@ -33,7 +34,8 @@ const NavBarBack = NavBar(navBarOptsBack);
 export default Actions.create(
     <Scene key="root" navBar={NavBarMain}>
         <Scene key="home" type="reset" component={MainView} title="Table Top Assistant" initial={true} />
-        <Scene key="calc" navBar={NavBarBack} component={CalculatorView} title="Calculator" />
+        <Scene key="calcstd" navBar={NavBarBack} component={CalculatorStandardView} title="Calculator" />
+        <Scene key="calcprp" navBar={NavBarBack} component={CalculatorProportionalView} title="Calculator" />
         <Scene key="config" navBar={NavBarBack} component={ConfigurationView} title="Configuration" />
         <Scene key="about" navBar={NavBarBack} component={AboutView} title="About" />
     </Scene>
