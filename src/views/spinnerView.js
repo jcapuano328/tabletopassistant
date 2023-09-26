@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-//import Spinner from 'rn-spinner';
+import { View, Text } from 'react-native';
 import {SpinNumeric} from '../widgets';
 import IconButton from '../components/iconButton';
 import {setValues} from '../actions/spin';
 import Style from '../services/style';
 import Images from '../res';
+import { Actions } from 'react-native-router-flux';
 
 var SpinnerView = React.createClass({
     getInitialState() {        
@@ -42,32 +42,49 @@ var SpinnerView = React.createClass({
     render() {
         //let justify = this.props.values.length > 1 ? 'space-between' : 'center';        
         let bsize = (Math.min(this.state.height, this.state.width)||96) * .75;        
+
+        let controls = [];
+        this.props.values.forEach((v,i) => {
+            if (i == 1 && this.props.values.length == 2 && this.props.difference) {
+                controls.push(this.renderDifference(i));
+            }
+            controls.push(this.renderSpinner(v, i));                
+        });
+
         return (
             <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', 
                 justifyContent: 'center', alignItems: 'center',
                 backgroundColor: 'lightgray',
                 marginLeft: 0, marginRight: 0}}>                
-                {this.props.values.map((v,i) => 
-                    <View key={i} style={{flex: 1, marginLeft: 5, marginRight: 5, marginBottom: 5}}>
-                        {/* 
-                        <Spinner max={100} min={-100} 
-                            width={Style.Scaling.scale(90)} 
-                            height={Style.Scaling.scale(30)} 
-                            fontSize={Style.Font.large()}
-                            btnFontSize={Style.Font.large()} 
-                            value={+v} 
-                            onNumChange={this.onChange(i)} />
-                        */}           
-                        <SpinNumeric value={v.toString()} min={-100} max={100} reset={true} onChanged={this.onChange(i)} />                    
-                    </View>                    
-                )} 
+                {controls.map((c) => c)} 
+            </View>
+        );
+    },
+    renderSpinner(v,i) {
+        return (            
+            <View key={i} style={{flex: 1, marginLeft: 5, marginRight: 5, marginBottom: 5}}>
+                <SpinNumeric value={v.toString()} min={-100} max={100} reset={true} onChanged={this.onChange(i)} />                    
+            </View>                    
+        );
+    },
+    renderDifference(i) {
+        let diff = Math.max(this.props.values[0] - this.props.values[1], 0);
+        return (
+            <View key={i+100} style={{flex:0.75, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <Text style={{fontSize:Style.Font.large(), fontWeight:'bold', textAlign:'center'}}>{diff}</Text>
+                {this.props.calculator 
+                    ? <IconButton icons={Images} image={'calc'} scale={0.5} resizeMode='stretch' onPress={() => Actions.calcstd()}/> 
+                    : null
+                }
             </View>
         );
     }
 });
 
 const mapStateToProps = (state) => ({    
-    values: state.spin.values    
+    values: state.spin.values,
+    difference: state.spin.difference,
+    calculator: state.spin.calculator
 });
 
 const mapDispatchToProps =  ({setValues});

@@ -14,7 +14,7 @@
     "install-stg": "adb -d install -r android/app/build/outputs/apk/tabletopassistant-releaseStaging-1.0.apk",
     "install-rel": "adb -d install -r android/app/build/outputs/apk/tabletopassistant-release-1.0.apk",
     "emulate-s3": "%ANDROID_HOME%/tools/emulator.exe -avd Galaxy_SIII",
-    "emulate-nexus7": "%ANDROID_HOME%/tools/emulator.exe -avd Nexus_7",    
+    "emulate-nexus7": "%ANDROID_HOME%/tools/emulator.exe -avd Nexus_7",
     "bridge": "adb reverse tcp:8081 tcp:8081",
     "menu": "adb shell input keyevent 82",
     "logs": "adb logcat *:S ReactNative:V ReactNativeJS:V",
@@ -44,5 +44,5 @@
   },
   "jest": {
     "preset": "react-native"
-  }  
+  }
 }

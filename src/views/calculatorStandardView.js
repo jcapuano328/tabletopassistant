@@ -6,6 +6,7 @@ import Images from '../res';
 import Style from '../services/style';
 import {round2Fixed} from '../services/calculator';
 import {setAttack,setDefend} from '../actions/odds';
+import {setValue} from '../actions/spin';
 
 const operationSymbol = (operation) => {
     switch(operation) {
@@ -119,6 +120,7 @@ var CalculatorStandardView = React.createClass({
             this.state.rhs = 0;
             this.state.result = 0;
             this.props.setAttack(this.state.attack);
+            this.props.setValue(this.state.attack, 0);
         } else if (key == 'def') {
             this.state.defend += round2Fixed(this.state.result, 1);
             this.state.display = '0';
@@ -127,6 +129,7 @@ var CalculatorStandardView = React.createClass({
             this.state.rhs = 0;
             this.state.result = 0;
             this.props.setDefend(this.state.defend);
+            this.props.setValue(this.state.defend, 1);
         }
 
         this.setState(this.state);
@@ -242,7 +245,7 @@ const mapStateToProps = (state) => ({
     defend: state.odds.defend
 });
 
-const mapDispatchToProps =  ({setAttack,setDefend});
+const mapDispatchToProps =  ({setAttack,setDefend,setValue});
 
 module.exports = connect(
   mapStateToProps, 

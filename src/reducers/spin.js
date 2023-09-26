@@ -13,7 +13,8 @@ let getValues = (v,c) => {
 const defaultState = {
     enabled: false,
     number: 0,
-    values: []
+    values: [],
+    difference: false
 };
 
 module.exports = (state = defaultState, action) => {
@@ -45,8 +46,19 @@ module.exports = (state = defaultState, action) => {
             ...state,
             followdice: action.value
         };
+            
+    case types.SET_SPIN_CONFIG_DIFFERENCE:
+        return {
+            ...state,
+            difference: action.value
+        };
 
-
+    case types.SET_SPIN_CONFIG_CALCULATOR:
+        return {
+            ...state,
+            calculator: action.value
+        };
+    
     case types.SET_SPIN_CONFIG_VALUES:
         return {
             ...state,

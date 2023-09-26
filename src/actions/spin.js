@@ -12,6 +12,13 @@ export const setFollowDice = (b) => (dispatch) => {
     dispatch({type: types.SET_SPIN_CONFIG_FOLLOWDICE, value: b});
 }
 
+export const setDifference = (b) => (dispatch) => {    
+    dispatch({type: types.SET_SPIN_CONFIG_DIFFERENCE, value: b});
+}
+
+export const setCalculator = (b) => (dispatch) => {    
+    dispatch({type: types.SET_SPIN_CONFIG_CALCULATOR, value: b});
+}
 
 export const setValues = (v) => (dispatch) => {    
     dispatch({type: types.SET_SPIN_CONFIG_VALUES, value: v});
